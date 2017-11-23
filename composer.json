@@ -2,7 +2,7 @@
     "name": "asabanovic/events",
     "description": "Laravel Package that helps you create, manage and delete Events",
     "type": "library",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "laravel/laravel": ">=5.5"
     },

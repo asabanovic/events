@@ -3,7 +3,7 @@
     "description": "Laravel Package that helps you create, manage and delete Events",
     "type": "library",
     "require": {
-        "laravel/laravel": "5.5.*",
+        "laravel/laravel": "5.5.*"
     },
     "license": "MIT",
     "authors": [

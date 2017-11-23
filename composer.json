@@ -1,0 +1,25 @@
+{
+    "name": "asabanovic/events",
+    "description": "Laravel Package that helps you create, manage and delete Events",
+    "type": "library",
+    "require": {
+        "laravel/laravel": "5.5.*",
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adnan Sabanovic",
+            "email": "adnanxteam@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Asabanovic\\Events\\EventServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+}

@@ -26,6 +26,16 @@ class Event extends Eloquent
     }
 
     /**
+     * Retrieve the parent group that this event belongs to (such as a RoundTable)
+     * 
+     * @return Relation 
+     */
+    public function group()
+    {
+        return $this->morphTo();
+    }
+
+    /**
      * Retrieve all comments for this event
      * 
      * @return Collection 

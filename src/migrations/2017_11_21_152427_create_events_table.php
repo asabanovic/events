@@ -15,7 +15,15 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->morphs('creator');
+            
+            // Creator of the event
+            $table->string('creator_type')->nullable();
+            $table->integer('creator_id')->unsigned()->nullable();
+
+            // Group that this event belongs to
+            $table->string('group_type')->nullable();
+            $table->integer('group_id')->unsigned()->nullable();
+
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->date('start')->nullable();

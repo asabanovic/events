@@ -20,6 +20,17 @@ trait EventTrait
 	}
 
 	/**
+	 * Set the event owner
+	 * 
+	 * @param  Asabanovic\Events\Model\Event  $event 	
+	 * @return Asabanovic\Events\Model\Event        
+	 */
+	public function organizeEvent(Event $event)
+	{
+		return $this->events()->save($event);
+	}
+
+	/**
 	 * Return Event model by event ID
 	 * This can also be done via the Event Facade
 	 * 
@@ -43,7 +54,7 @@ trait EventTrait
 	 * @param  Event  $event 
 	 * @return  Asabanovic\Events\Model\EventAttendance
 	 */
-	public function joins(Event $event)
+	public function goTo(Event $event)
 	{
 		return $this->attending()->create([ 'event_id' => $event->id]);
 	}

@@ -3,6 +3,7 @@
 namespace Asabanovic\Events\Model;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Asabanovic\Events\Model\Event;
 
 class Comment extends Eloquent
 {
@@ -17,10 +18,10 @@ class Comment extends Eloquent
      * 
      * @return Relation 
      */
-    public function event()
-    {
-    	return $this->belongsTo('Asabanovic\Events\Model\Event');
-    }
+    // public function event()
+    // {
+    // 	return $this->belongsTo('Asabanovic\Events\Model\Event');
+    // }
 
     /**
      * Retrive the owner of the comment
@@ -30,6 +31,16 @@ class Comment extends Eloquent
     public function creator()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Assign this comment to the event passed
+     * @param  Asabanovic\Events\Model\Event  $event 
+     * @return Asabanovic\Events\Model\Event        
+     */
+    public function associateWith(Event $event)
+    {
+        return $this->events()->save($event);
     }
 
     /**

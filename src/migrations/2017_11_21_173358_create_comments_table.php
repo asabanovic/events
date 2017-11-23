@@ -15,7 +15,11 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->morphs('creator');
+            
+            // Creator of the comment. Allow nullable so we can first create a comment and then assign it to a user
+            $table->string('creator_type')->nullable();
+            $table->integer('creator_id')->unsigned()->nullable();
+
             $table->text('message')->nullable();
             $table->softDeletes();
             $table->timestamps();

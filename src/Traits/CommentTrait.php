@@ -17,6 +17,17 @@ trait CommentTrait
 	}
 
 	/**
+	 * Creator whites a comment
+	 * 
+	 * @param  Asabanovic\Events\Model\Comment  $comment 	
+	 * @return Asabanovic\Events\Model\Comment        
+	 */
+	public function writeComment(Comment $comment)
+	{
+		return $this->comments()->save($comment);
+	}
+
+	/**
 	 * Return Comment model by comment ID
 	 * This can also be done via the Comment Facade
 	 * 

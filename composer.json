@@ -5,7 +5,7 @@
     "minimum-stability": "dev",
     "require-dev": {
         "illuminate/database": "5.*",
-        "phpunit/phpunit": "~5.*"
+        "phpunit/phpunit": "5.*"
     },
     "license": "MIT",
     "authors": [

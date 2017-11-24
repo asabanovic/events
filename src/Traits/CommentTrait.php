@@ -17,6 +17,16 @@ trait CommentTrait
 	}
 
 	/**
+	 * Get all comments of this model with the creator object
+	 * 
+	 * @return Relation 
+	 */
+	public function commentsWith()
+	{
+		return $this->comments()->with('creator')->get();
+	}
+
+	/**
 	 * Creator whites a comment
 	 * 
 	 * @param  Asabanovic\Events\Model\Comment  $comment 	
@@ -25,24 +35,6 @@ trait CommentTrait
 	public function writeComment(Comment $comment)
 	{
 		return $this->comments()->save($comment);
-	}
-
-	/**
-	 * Return Comment model by comment ID
-	 * This can also be done via the Comment Facade
-	 * 
-	 * @param  integer $comment_it 
-	 * @return Asabanovic\Events\Model\Comment           
-	 */
-	public function comment($comment_id)
-	{
-		$comment = Comment::find(intval($comment_id));
-
-		if (!$comment) {
-			throw new Exception("Comment with comment ID = $comment_id does not exist", 1);
-		}
-
-		return $comment;
 	}
  
 }

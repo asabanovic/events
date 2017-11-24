@@ -44,4 +44,14 @@ class Event extends Eloquent
     {
     	return $this->belongsToMany('Asabanovic\Events\Model\Comment', 'event_comments');
     }
+
+    /**
+     * Get all comments of this event with the event object
+     * 
+     * @return Relation 
+     */
+    public function commentsWith()
+    {
+        return $this->comments()->with('events')->get();
+    }
 }

@@ -13,7 +13,24 @@ class Event extends Eloquent
 	 * Allow all fields to be mass-assigned
 	 * @var array
 	 */
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'creator_type',
+        'creator_id',
+        'group_type',
+        'group_id',
+        'title',
+        'description',
+        'start',
+        'end',
+        'address',
+        'city',
+        'zip',
+        'state',
+        'country',
+        'deleted_at',
+        'created_at',
+        'updated_at'
+    ];
 
     /**
      * Retrieve the owner of the event

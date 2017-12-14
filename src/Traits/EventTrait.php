@@ -60,6 +60,17 @@ trait EventTrait
 	}
 
 	/**
+	 * This object will NOT attend this specific event
+	 * 
+	 * @param  Event  $event 
+	 * @return  Asabanovic\Events\Model\EventAttendance
+	 */
+	public function cancel(Event $event)
+	{
+		return $this->attending()->where('event_id', $event->id)->delete();
+	}
+
+	/**
 	 * Pretty method to list all events that this object is attending
 	 * 
 	 * @return Collection 

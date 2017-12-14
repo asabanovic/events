@@ -71,4 +71,24 @@ class Event extends Eloquent
     {
         return $this->comments()->with('events')->get();
     }
+
+    /**
+     * Define a relationship with the Attendance model
+     * 
+     * @return Relation 
+     */
+    public function attending()
+    {
+        return $this->hasMany('Asabanovic\Events\Model\EventAttendance');
+    }
+
+    /**
+     * Define a relationship with the Attendance model pulling creator object as well (user)
+     * 
+     * @return Relation 
+     */
+    public function attendingWith()
+    {
+        return $this->hasMany('Asabanovic\Events\Model\EventAttendance')->with('creator');
+    }
 }

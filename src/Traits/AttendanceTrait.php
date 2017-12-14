@@ -15,5 +15,16 @@ trait AttendanceTrait
 	{
 		return $this->morphMany('Asabanovic\Events\Model\EventAttendance', 'creator');
 	}
+
+	/**
+	 * Check if this model is attending specific event
+	 * 
+	 * @param  Event   $event 
+	 * @return Bollean        
+	 */
+	public function isAttending(Event $event)
+	{
+		return $this->attending()->where('event_id', $event->id)->exists();
+	}
  
 }

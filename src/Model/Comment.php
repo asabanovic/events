@@ -20,7 +20,7 @@ class Comment extends Eloquent
      */
     // public function event()
     // {
-    // 	return $this->belongsTo('Asabanovic\Events\Model\Event');
+    // 	return $this->belongsToMany('Asabanovic\Events\Model\Event', 'event_comments');
     // }
 
     /**

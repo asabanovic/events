@@ -11,6 +11,7 @@ class Event extends Eloquent
 	
     /**
 	 * Allow all fields to be mass-assigned
+     * 
 	 * @var array
 	 */
     protected $fillable = [
@@ -20,6 +21,7 @@ class Event extends Eloquent
         'group_id',
         'title',
         'description',
+        'url',
         'start',
         'end',
         'address',

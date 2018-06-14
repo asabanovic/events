@@ -15,6 +15,7 @@ class Event extends Eloquent
 	 * @var array
 	 */
     protected $fillable = [
+        'establishment',
         'creator_type',
         'creator_id',
         'group_type',

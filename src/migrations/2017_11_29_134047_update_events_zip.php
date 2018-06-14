@@ -27,11 +27,11 @@ class UpdateEventsZip extends Migration
      */
     public function down()
     {
-        Schema::table('events', function (Blueprint $table)
-        {
-            $table->dropColumn('zip');
-            $table->dropColumn('latitude');
-            $table->dropColumn('longitude');
-        });
+        // Schema::table('events', function (Blueprint $table)
+        // {
+        //     $table->dropColumn('zip');
+        //     $table->dropColumn('latitude');
+        //     $table->dropColumn('longitude');
+        // });
     }
 }

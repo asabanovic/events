@@ -15,6 +15,9 @@ class Event extends Eloquent
 	 * @var array
 	 */
     protected $fillable = [
+        'dial_in_number',        
+        'host',        
+        'screen_share_url',
         'establishment',
         'creator_type',
         'creator_id',

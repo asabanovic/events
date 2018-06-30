@@ -14,9 +14,19 @@ class AlterEventTableAddColumns extends Migration
     public function up()
     {
         Schema::table('events', function(Blueprint $table){
-            $table->string('dial_in_number')->nullable()->after('url');
-            $table->string('screen_share_url')->nullable()->after('url');
-            $table->string('host')->nullable()->after('url');
+            if (!Schema::hasColumn('events', 'dial_in_number')) {
+                $table->string('dial_in_number')->nullable()->after('url');
+            }
+
+            if (!Schema::hasColumn('events', 'screen_share_url')) {
+                $table->string('screen_share_url')->nullable()->after('url');
+            }
+            
+            if (!Schema::hasColumn('events', 'host')) {
+                $table->string('host')->nullable()->after('url');
+            }
+
+            
         });
     }
 
@@ -28,9 +38,17 @@ class AlterEventTableAddColumns extends Migration
     public function down()
     {
         Schema::table('events', function(Blueprint $table){
-            $table->dropColumn('dial_in_number');
-            $table->dropColumn('screen_share_url');
-            $table->dropColumn('host');
+            // if (Schema::hasColumn('events', 'host')) {
+            //     $table->dropColumn('host');
+            // } 
+
+            // if (Schema::hasColumn('events', 'screen_share_url')) {
+            //     $table->dropColumn('screen_share_url');
+            // }
+
+            // if (Schema::hasColumn('events', 'screen_share_url')) {
+            //     $table->dropColumn('dial_in_number');
+            // }
         });
     }
 }

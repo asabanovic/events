@@ -38,6 +38,7 @@ class Event extends Eloquent
         'updated_at'
     ];
 
+
     /**
      * Retrieve the owner of the event
      * 
@@ -97,4 +98,5 @@ class Event extends Eloquent
     {
         return $this->hasMany('Asabanovic\Events\Model\EventAttendance')->with('creator');
     }
+
 }

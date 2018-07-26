@@ -21,6 +21,8 @@ class Event extends Eloquent
         'establishment',
         'creator_type',
         'creator_id',
+        'organization_type',
+        'organization_id',
         'group_type',
         'group_id',
         'title',

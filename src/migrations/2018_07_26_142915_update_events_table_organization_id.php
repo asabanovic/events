@@ -27,14 +27,16 @@ class UpdateEventsTableOrganizationId extends Migration
      */
     public function down()
     {
-        Schema::table('events', function(Blueprint $table) {
-            if (Schema::hasColumn('events', 'organization_id')) {
-                $table->dropColumn('organization_id');
-            }
+        if (Config::get('database.default') === 'mysql') {
+            Schema::table('events', function(Blueprint $table) {
+                if (Schema::hasColumn('events', 'organization_id')) {
+                    $table->dropColumn('organization_id');
+                }
 
-            if (Schema::hasColumn('events', 'organization_type')) {
-                $table->dropColumn('organization_type');
-            }
-        });
+                if (Schema::hasColumn('events', 'organization_type')) {
+                    $table->dropColumn('organization_type');
+                }
+            });
+        }
     }
 }
